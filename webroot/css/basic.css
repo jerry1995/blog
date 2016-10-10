@@ -1,0 +1,49 @@
+
+body{
+	margin: 0 auto;
+}
+
+.container{
+	border:0px;
+	solid #000;
+	background-color:#ffe;
+	text-align:center;
+
+}
+
+
+.container .right{
+	float:right;
+    width:79%;
+    border:2px solid #ccc;
+    height:514px;
+	margin-left:1px;
+}
+
+.container .userinfo{
+	width:20%;
+    border:2px solid #ccc;
+    height:250px;
+	
+}
+
+.container .search{
+	width:20%;
+    border:2px solid #ccc;
+    height:250px;
+	margin:14px 0px;
+}
+
+#footer{
+	text-align:center;
+	width:auto;
+	clear:both;
+	height:60px;
+}
+
+.container h2{
+	font-size:14px;
+	background:#eee;
+	margin:0;
+	text-align:left;
+}
