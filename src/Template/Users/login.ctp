@@ -106,7 +106,7 @@
 
 </head>
 
-
+<?php echo $this->element('topbar') ?>
 <div class="container-fluid">
     <div class="row">
         <div class="loginpanel">
@@ -163,7 +163,7 @@
                 alert(result);
             },
             error: function (xhr, textStatus, errorThrown) {
-                document.getElementById("reminder").innerHTML="some error occurred!"+xhr.status+xhr.readyState;
+                //document.getElementById("reminder").innerHTML="some error occurred!"+xhr.status+xhr.readyState;
             }
          });
         if ($("#username").val().length != 0 && $("#password").val().length != 0) {
