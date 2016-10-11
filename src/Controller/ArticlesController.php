@@ -21,7 +21,7 @@ class ArticlesController extends AppController
     public function index()
     {
         $this->viewBuilder()->layout(false);
-        $articles = $this->Articles->find('all');
+		$articles = $this->Articles->find('all');
         $this->set(compact('articles'));
         $categories = $this->Articles->Categories->find('all');
         $this->set(compact('categories'));
@@ -77,5 +77,21 @@ class ArticlesController extends AppController
             return $this->redirect(['action' => 'index']);
         }
     }
+	
+	public function category($t_category=null){
+        $this->viewBuilder()->layout(false);
+		if($t_category==null){
+			$articles = $this->Articles->find('all');
+		}
+		else{
+			$articles = $this->Articles->find('list',['keyField'=>$t_category]);
+		}
+		
+        $this->set(compact('articles'));
+        $categories = $this->Articles->Categories->find('all');
+        $this->set(compact('categories'));
+		$this->set('title','博文');
+		$this->render('index');
+	}
 
 }

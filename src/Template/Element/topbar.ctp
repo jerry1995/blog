@@ -14,9 +14,9 @@
                      <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                     <li><a href="http://www.jkblog.com/articles/csgo">csgo</a></li>
-                     <li><a href="http://www.jkblog.com/articles/dota2">dota2</a></li>
-                     <li><a href="http://www.jkblog.com/articles/php">php</a></li>
+                     <li><a href="http://www.jkblog.com/articles/category/csgo">csgo</a></li>
+                     <li><a href="http://www.jkblog.com/articles/category/dota2">dota2</a></li>
+                     <li><a href="http://www.jkblog.com/articles/category/php">php</a></li>
                      <li class="divider"></li>
                      <li><a href="http://www.jkblog.com/articles/talk">说说</a></li>
                      <li class="divider"></li>
