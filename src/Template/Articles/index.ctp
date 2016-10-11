@@ -44,5 +44,9 @@
     </tr>
 <?php endforeach; ?>
 </table>
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="/webroot/js/jquery-3.1.1.min.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="/webroot/js/bootstrap.min.js"></script>
 </body>
 </html>

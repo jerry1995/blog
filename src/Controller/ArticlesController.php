@@ -55,7 +55,8 @@ class ArticlesController extends AppController
 
     public function edit($id = null)
     {
-        $article = $this->Articles->get($id);
+        $this->viewBuilder()->layout(false);
+		$article = $this->Articles->get($id);
         if ($this->request->is(['post', 'put'])) {
             $this->Articles->patchEntity($article, $this->request->data);
             if ($this->Articles->save($article)) {

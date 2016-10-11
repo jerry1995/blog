@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
     <link href="/webroot/css/bootstrap.css" rel="stylesheet">
-
+	<link href="/webroot/css/basic.css" rel="stylesheet">
     <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
     <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
     <!--[if lt IE 9]>
@@ -15,33 +15,39 @@
     <![endif]-->
 </head>
 <body>
-<h1 style="margin-left:30px;">Blog Register</h1>
+<?php echo $this->element('topbar') ?>
+<div class="register">
+	<h1 class="title">Blog Register</h1>
+</div>
+<div class="regform">
+	<form class="form-horizontal"  role="form" method="post" action="/users/register">
+		<?= $this->Form->create($user) ?>
+		
+			<div class="form-group">
+				<label for="username" class="col-sm-4 control-label">username</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="username" name="username"
+						   placeholder="用户名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-4 control-label">password</label>
+				<div class="col-sm-3">
+					<input type="password" class="form-control" id="password" name="password"
+						   placeholder="密码">
+				</div>
+			</div>
 
-<form class="form-horizontal" role="form" method="post" action="/users/register">
-    <?= $this->Form->create($user) ?>
-    <div class="form-group">
-        <label for="username" class="col-sm-1 control-label">username</label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" id="username" name="username"
-                   placeholder="用户名">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password" class="col-sm-1 control-label">password</label>
-        <div class="col-sm-2">
-            <input type="password" class="form-control" id="password" name="password"
-                   placeholder="密码">
-        </div>
-    </div>
-   <?= $this->Flash->render('unable') ?>
+	   <?= $this->Flash->render('unable') ?>
 
-    <div class="form-group">
-        <div class="col-sm-offset-1 col-sm-10">
-            <button type="submit" class="btn btn-default">注册</button>
-        </div>
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-10">
+				<button type="submit" class="btn btn-default">注册</button>
+			</div>
 
-    </div>
-</form>
+		</div>
+	</form>
+</div>
 
 
 </body>

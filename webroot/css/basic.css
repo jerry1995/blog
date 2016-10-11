@@ -47,3 +47,35 @@ body{
 	margin:0;
 	text-align:left;
 }
+
+.register {
+
+	text-align:center;
+	height:50px;
+}
+
+.regform {
+	position:absolute;
+	margin-left:15%;
+
+	width:1000px;
+	border:2px dashed #ccc;
+	padding-left:10%;
+}
+
+.col-1{
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.col-2{
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+
