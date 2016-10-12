@@ -31,8 +31,8 @@
         </td>
 
         <td>
-            <?= $article->created->format(DATE_RFC850) ?>
-        </td>
+            <?= $article->created->format(DATE_RFC850) ?> 
+         </td>
         <td>
             <?= $this->Form->postLink(
                 'Delete',

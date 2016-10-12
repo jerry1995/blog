@@ -80,18 +80,13 @@ class ArticlesController extends AppController
 	
 	public function category($t_category=null){
         $this->viewBuilder()->layout(false);
-		if($t_category==null){
-			$articles = $this->Articles->find('all');
-		}
-		else{
-			$articles = $this->Articles->find('list',['keyField'=>$t_category]);
-		}
-		
+        $articles = $this->Articles->find('all');
+
+        $this->set('count',$count);
         $this->set(compact('articles'));
         $categories = $this->Articles->Categories->find('all');
         $this->set(compact('categories'));
-		$this->set('title','博文');
-		$this->render('index');
+		$this->set('title',$t_category.'博文');
 	}
 
 }

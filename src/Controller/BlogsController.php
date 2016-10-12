@@ -37,7 +37,6 @@ class BlogsController extends AppController
     {
         $this->viewBuilder()->layout(false);
 
-
     }
 
     public function display()
