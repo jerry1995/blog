@@ -27,11 +27,7 @@
         ?>
     <tr>
             <td><?= $article->id ?></td>
-            <td><?php foreach ($categories as $category){
-                    if ($category->id == $article->category_id)
-                        echo $category->name;
-                } ?>
-            </td>
+            <td><?php echo $t_category; ?></td>
             <td>
                 <?= $this->Html->link($article->title, ['action' => 'view',$article->id]) ?>
             </td>

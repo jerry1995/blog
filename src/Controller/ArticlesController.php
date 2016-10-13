@@ -80,13 +80,32 @@ class ArticlesController extends AppController
 	
 	public function category($t_category=null){
         $this->viewBuilder()->layout(false);
-        $articles = $this->Articles->find('all');
 
-        $this->set('count',$count);
-        $this->set(compact('articles'));
-        $categories = $this->Articles->Categories->find('all');
-        $this->set(compact('categories'));
-		$this->set('title',$t_category.'博文');
+
+
+
+        $category = $this->Articles->Categories->findByName($t_category);
+        $category=$category->toArray();
+/*        var_dump($category);
+        die();*/
+        if(isset($category[0])) {
+            $category_id = $category[0]->id;
+            $articles = $this->Articles->find('all', [
+                'conditions' => ['category_id' => $category_id]
+            ]);
+            $count = $articles->count();
+
+
+            $this->set(compact('articles'));
+            $this->set('title', $t_category . '博文');
+            $this->set('t_category', $t_category);
+            $this->set('count', $count);
+        }
+        else{
+            $this->viewBuilder()->templatePath('Error') ;
+            $this->render('error404');
+        }
+
 	}
 
 }

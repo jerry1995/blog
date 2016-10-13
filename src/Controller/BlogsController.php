@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Component;
+use Cake\ORM\TableRegistry;
 
 /**
  * homepage controller
@@ -36,7 +37,14 @@ class BlogsController extends AppController
     public function index()
     {
         $this->viewBuilder()->layout(false);
-
+        $articles = TableRegistry::get('Articles');
+        $articles = $articles->find('all', [
+            'fields' => ['id', 'title'],
+            'order' => ['id' => 'DESC'],
+            'limit' => 10,
+        ]);
+        $articles=$articles->toArray();
+        $this->set('articles',$articles);
     }
 
     public function display()
