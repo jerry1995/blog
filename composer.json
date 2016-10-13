@@ -4,12 +4,14 @@
     "homepage": "http://cakephp.org",
     "type": "project",
     "license": "MIT",
+
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": "3.3.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
-        "cakephp/plugin-installer": "*"
+        "cakephp/plugin-installer": "*",
+        "cakephp/acl": "^0.2.2"
     },
     "require-dev": {
         "psy/psysh": "@stable",
@@ -38,5 +40,8 @@
         "post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
     },
     "minimum-stability": "beta",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "secure-http": false
+    }
 }

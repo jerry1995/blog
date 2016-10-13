@@ -223,3 +223,4 @@ Type::build('datetime')
 }*/
 
 Plugin::load('Migrations');
+Plugin::load('Acl', ['bootstrap' => true]);
